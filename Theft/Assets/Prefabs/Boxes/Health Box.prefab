@@ -4759,6 +4759,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstAidKit_White
       objectReference: {fileID: 0}
+    - target: {fileID: 9090630262107930881, guid: 82a76256a42024049964a0c8b9bb380f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 026cb6e42ef5d7a42a11ed06e7596e55, type: 2}
     m_RemovedComponents:
     - {fileID: 3261585399519066648, guid: 82a76256a42024049964a0c8b9bb380f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 82a76256a42024049964a0c8b9bb380f, type: 3}

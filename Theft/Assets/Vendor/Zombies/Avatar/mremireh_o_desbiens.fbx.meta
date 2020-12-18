@@ -21,32 +21,32 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: mremireh_body__diffuse
-    second: {fileID: 2800000, guid: d35786e5d8bff8650b5dc3fd2514fc4a, type: 3}
+    second: {fileID: 2800000, guid: 21d7dd2f624a057ebb8bed9aa880fcb3, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: mremireh_body_normal
-    second: {fileID: 2800000, guid: b690319b75ed9609fbe07c9a4cf0cd77, type: 3}
+    second: {fileID: 2800000, guid: c07d3e222e630f047a745bc13279d7f5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: mremireh_body_specular
-    second: {fileID: 2800000, guid: 50805a650eff0e885bca5c916a220fe8, type: 3}
+    second: {fileID: 2800000, guid: 7707a1360dd1c92ab98f4a413a1b3d7a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: mremireh_shoe_diffuse
-    second: {fileID: 2800000, guid: d56fb60ff480bff7185a96b481b53844, type: 3}
+    second: {fileID: 2800000, guid: 6e4faf714591ac5569359966f88adfc5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: mremireh_shoe_normal
-    second: {fileID: 2800000, guid: bc495fbea804bec4bb3aaaa4daa6fa41, type: 3}
+    second: {fileID: 2800000, guid: 23a306c935095699a836ac53c2c02c48, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: mremireh_shoe_specular
-    second: {fileID: 2800000, guid: f37fbb352d202454ab0ccea588339753, type: 3}
+    second: {fileID: 2800000, guid: c270ee91a4becbca4a91e0ac52fc93e5, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
