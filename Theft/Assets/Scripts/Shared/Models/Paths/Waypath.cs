@@ -101,5 +101,27 @@ namespace Game.Shared {
 
             return points[index];
         }
+
+
+        /**
+         * Draw a gizmo for the waypath.
+         */
+        #if UNITY_EDITOR
+        private void OnDrawGizmos() {
+            Gizmos.color = Color.red;
+
+            for (int i = 0; i < points.Length - 1; i++) {
+                Vector3 source = points[i].transform.position;
+                Vector3 target = points[i + 1].transform.position;
+                Gizmos.DrawLine(source, target);
+            }
+
+            if (isCircular && points.Length > 1) {
+                Vector3 source = points[0].transform.position;
+                Vector3 target = points[points.Length - 1].transform.position;
+                Gizmos.DrawLine(source, target);
+            }
+        }
+        #endif
     }
 }

@@ -46,5 +46,16 @@ namespace Game.Shared {
         public Waypath RandomPath() {
             return paths[UnityEngine.Random.Range(0, paths.Length)];
         }
+
+
+        /**
+         * Draw a gizmo for the waypoint.
+         */
+        #if UNITY_EDITOR
+        private void OnDrawGizmos() {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawCube(transform.position, Vector3.one);
+        }
+        #endif
     }
 }
