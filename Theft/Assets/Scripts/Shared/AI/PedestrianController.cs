@@ -12,11 +12,17 @@ namespace Game.Shared {
     [RequireComponent(typeof(NavMeshAgent))]
     public class PedestrianController : ActorController {
 
+        /** Clip to play when the actor is damaged */
+        [SerializeField] private AudioClip damageClip = null;
+
         /** If the actor start state is patroling */
         [SerializeField] private bool patrolOnStart = false;
 
         /** Navigating to a concrete target */
         [HideInInspector] public BaseState IdleState = new BaseState();
+
+        /** Something killed the actor */
+        public DieState DieState = new DieState();
 
         /** Navigating from on waypoint to another */
         public PatrolState PatrolState = new PatrolState();
@@ -52,12 +58,19 @@ namespace Game.Shared {
         /**
          * Cause damage to this actor.
          */
-        public override void Damage(Vector3 point) {}
+        public override void Damage(Vector3 point) {
+            this.Kill();
+        }
 
 
         /**
          * Kills this actor.
          */
-        public override void Kill() {}
+        public override void Kill() {
+            base.Kill();
+            SetState(DieState);
+            AudioService.PlayClip(gameObject, damageClip);
+            animator.SetTrigger("Die");
+        }
     }
 }
