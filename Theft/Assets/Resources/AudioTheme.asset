@@ -18,7 +18,7 @@ MonoBehaviour:
   - name: Weapon Shot
     clip: {fileID: 8300000, guid: 3d90384e6ce9a543a81a4a07bc402c20, type: 3}
   - name: Game Music
-    clip: {fileID: 8300000, guid: df7b7867b3d8219c5bf36afd0d9a015f, type: 3}
+    clip: {fileID: 0}
   - name: Collect Reward
     clip: {fileID: 8300000, guid: 05ed1aa36c778ab2b83af530518b0407, type: 3}
   - name: Collect Key
