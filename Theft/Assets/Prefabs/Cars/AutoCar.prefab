@@ -1,24 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!95 &-6653292158596079504
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5581540016642423715}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!195 &-9136834776970082337
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -28,20 +9,20 @@ NavMeshAgent:
   m_GameObject: {fileID: 5581540016642423715}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 10
+  m_Radius: 2.6
+  m_Speed: 50
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 2
-  m_StoppingDistance: 0
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.5
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1468344614042581528
+--- !u!114 &3928714169116080873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50,33 +31,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 5581540016642423715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ac0c26516b47727a97b57fc9519998, type: 3}
+  m_Script: {fileID: 11500000, guid: 08e4f3391c74d71b0b6742efcd2e45be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isAlive: 1
-  PlayerListener: {fileID: 6001619824211561228, guid: d0bdd54e58c3834a2adeb478e56c74dd,
-    type: 3}
-  damageClip: {fileID: 8300000, guid: 9d1c8f1380f1c363d99c786933e3d0b2, type: 3}
-  moanClip: {fileID: 8300000, guid: 71c3476a9d551a793a9f61bdb0afa775, type: 3}
-  healthPoints: 2
-  attackDelay: 2.5
   patrolOnStart: 1
-  ChaseState:
-    waypoint: {fileID: 0}
-    followPlayer: 1
-  DieState:
-    ragdollDelay: 0.9
   PatrolState:
     direction: 1
     waypath: {fileID: 0}
     waypoint: {fileID: 0}
---- !u!136 &4857170432539793383
+--- !u!136 &4857170432435686245
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5581540016642423727}
+  m_GameObject: {fileID: 5581540016642423721}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -112,13 +82,13 @@ CapsuleCollider:
   m_Height: 1.1
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &4857170432435686245
+--- !u!136 &4857170432539793383
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5581540016642423721}
+  m_GameObject: {fileID: 5581540016642423727}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
