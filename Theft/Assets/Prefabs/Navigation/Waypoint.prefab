@@ -43,4 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a07116d46e5c63daaab515ad5cab90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paths: []
+  uiid: -28218
+  color: {r: 0, g: 1, b: 0, a: 1}
+  children: []

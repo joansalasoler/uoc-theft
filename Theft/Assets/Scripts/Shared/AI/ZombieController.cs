@@ -40,7 +40,7 @@ namespace Game.Shared {
         public DieState DieState = new DieState();
 
         /** Navigating from on waypoint to another */
-        public PatrolState PatrolState = new PatrolState();
+        public WanderState WanderState = new WanderState();
 
         /** Handlers for the colliders tha damage the player */
         private OnPlayerDamageCollision[] damagers = null;
@@ -82,7 +82,7 @@ namespace Game.Shared {
         private IEnumerator StartPatroling() {
             float delay = UnityEngine.Random.Range(0.5f, 5.0f);
             yield return new WaitForSeconds(delay);
-            if (state == IdleState) SetState(PatrolState);
+            if (state == IdleState) SetState(WanderState);
         }
 
 
@@ -175,7 +175,7 @@ namespace Game.Shared {
         private void OnPlayerTriggerExit(Collider collider) {
             if (isAlive) {
                 AudioService.StopLoop(gameObject);
-                SetState(PatrolState);
+                SetState(WanderState);
             }
         }
     }

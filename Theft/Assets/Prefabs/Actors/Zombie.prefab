@@ -696,10 +696,8 @@ MonoBehaviour:
     followPlayer: 1
   DieState:
     ragdollDelay: 0.9
-  PatrolState:
-    direction: 1
-    waypath: {fileID: 0}
-    waypoint: {fileID: 0}
+  WanderState:
+    radius: 15
 --- !u!114 &6001619825618129460
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,13 +5,13 @@ using UnityEngine.AI;
 namespace Game.Shared {
 
     /**
-     * A actor is moving around a path.
+     * A actor is wandering the scene.
      */
     [Serializable, RequireComponent(typeof(NavMeshAgent))]
-    public class PatrolState : BaseState {
+    public class WanderState : BaseState {
 
-        /** Current waypoint we are moving towards */
-        public Waypoint waypoint = null;
+        /** Wander radius */
+        public float radius = 15f;
 
         /** Navigation agent of the actor */
         private NavMeshAgent agent = null;
@@ -31,11 +31,10 @@ namespace Game.Shared {
         /**
          * Makes the actor move torwards a point.
          */
-        private void MoveTowards(Waypoint waypoint) {
+        private void MoveTowards(Vector3 position) {
             if (agent.enabled) {
-                agent.SetDestination(waypoint.transform.position);
+                agent.SetDestination(position);
                 agent.isStopped = false;
-                this.waypoint = waypoint;
             }
         }
 
@@ -51,11 +50,30 @@ namespace Game.Shared {
 
 
         /**
+         * Obtains a random point on the scene.
+         */
+        private Vector3 GetRandomPoint() {
+            NavMeshHit hit;
+
+            Transform transform = agent.transform;
+            Vector3 direction = UnityEngine.Random.insideUnitSphere * radius;
+            Vector3 origin = radius * transform.forward.normalized;
+            Vector3 target = origin + direction + transform.position;
+
+            if (NavMesh.SamplePosition(target, out hit, radius, agent.areaMask)) {
+                return hit.position;
+            }
+
+            return Vector3.zero;
+        }
+
+
+        /**
          * State activation handler.
          */
         public override void OnStateEnter(ActorController actor) {
             agent = actor.GetComponent<NavMeshAgent>();
-            MoveTowards(waypoint);
+            MoveTowards(agent.transform.position);
         }
 
 
@@ -72,8 +90,11 @@ namespace Game.Shared {
          */
         public override void OnUpdate(ActorController actor) {
             if (actor.isAlive && agent.enabled && IsAtWaypoint()) {
-                waypoint = waypoint.Next();
-                MoveTowards(waypoint);
+                Vector3 target = GetRandomPoint();
+
+                if (target != Vector3.zero) {
+                    MoveTowards(target);
+                }
             }
         }
     }
