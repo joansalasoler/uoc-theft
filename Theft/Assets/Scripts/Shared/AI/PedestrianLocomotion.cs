@@ -11,7 +11,7 @@ namespace Game.Shared {
     public class PedestrianLocomotion: MonoBehaviour {
 
         /** Maximum speed of the walking animation */
-        public float maximumWalkSpeed = 2.0f;
+        public float maximumWalkSpeed = 3.8f;
 
         /** Humanoid character animator */
         private Animator animator = null;

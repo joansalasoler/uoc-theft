@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -20,7 +21,7 @@ namespace Game.Shared {
         /**
          * Checks if the actor reached the waypoint.
          */
-        private bool IsAtWaypoint() {
+        public bool IsAtWaypoint() {
             bool isPending = agent.pathPending;
             bool isAtPoint = agent.remainingDistance <= agent.stoppingDistance;
 
@@ -31,7 +32,7 @@ namespace Game.Shared {
         /**
          * Makes the actor move torwards a point.
          */
-        private void MoveTowards(Waypoint waypoint) {
+        public void MoveTowards(Waypoint waypoint) {
             if (agent.enabled) {
                 agent.SetDestination(waypoint.transform.position);
                 agent.isStopped = false;
@@ -43,9 +44,21 @@ namespace Game.Shared {
         /**
          * Makes the actor stop from moving.
          */
-        private void StopMoving() {
-            if (agent.enabled) {
+        public void StopMoving(ActorController actor) {
+            if (agent.enabled && !agent.isStopped) {
                 agent.isStopped = true;
+                actor.StartCoroutine(Break());
+            }
+        }
+
+
+        /**
+         * Makes the actor continue moving.
+         */
+        public void ResumeMoving(ActorController actor) {
+            if (agent.enabled && agent.isStopped) {
+                agent.isStopped = false;
+                MoveTowards(waypoint);
             }
         }
 
@@ -63,7 +76,7 @@ namespace Game.Shared {
          * State deactivation handler.
          */
         public override void OnStateExit(ActorController actor) {
-            StopMoving();
+            StopMoving(actor);
         }
 
 
@@ -75,6 +88,22 @@ namespace Game.Shared {
                 waypoint = waypoint.Next();
                 MoveTowards(waypoint);
             }
+        }
+
+
+        /**
+         * Slowly stops the agent from moving.
+         */
+        private IEnumerator Break() {
+            float elapsedTime = 0f;
+
+            while (agent.isStopped && elapsedTime < 2f) {
+                elapsedTime += Time.deltaTime;
+                agent.velocity = Vector3.Lerp(agent.velocity, Vector3.zero, elapsedTime / 2f);
+                yield return null;
+            }
+
+            yield return null;
         }
     }
 }

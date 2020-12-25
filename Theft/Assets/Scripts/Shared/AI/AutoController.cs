@@ -44,6 +44,26 @@ namespace Game.Shared {
 
 
         /**
+         * Stops the car if it was patroling.
+         */
+        public void Break() {
+            if (state == PatrolState) {
+                PatrolState.StopMoving(this);
+            }
+        }
+
+
+        /**
+         * Resumes the car movement if it was patroling.
+         */
+        public void Resume() {
+            if (state == PatrolState) {
+                PatrolState.ResumeMoving(this);
+            }
+        }
+
+
+        /**
          * Cause damage to this actor.
          */
         public override void Damage(Vector3 point) {}

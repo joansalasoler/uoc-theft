@@ -11,8 +11,8 @@ namespace Game.Shared {
     public class Waypoint : MonoBehaviour {
 
         /** Current instance ID */
-        [SerializeField, HideInInspector]
-        private int uiid = 0;
+        // [SerializeField, HideInInspector]
+        // private int uiid = 0;
 
         /** Color to draw the gizmos */
         public Color color = Color.green;
