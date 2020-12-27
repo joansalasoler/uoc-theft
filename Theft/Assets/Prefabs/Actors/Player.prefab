@@ -189,70 +189,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &2763697649043121370
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6026396415347315420}
-  - component: {fileID: 4064658690325841784}
-  - component: {fileID: 49485563020979732}
-  m_Layer: 0
-  m_Name: Navmesh Obstacle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6026396415347315420
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2763697649043121370}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 791441155348231308}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!208 &4064658690325841784
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2763697649043121370}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.75, y: 2, z: 0.75}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 1.5, z: 0}
-  m_TimeToStationary: 0.5
---- !u!114 &49485563020979732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2763697649043121370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: 00000000
 --- !u!65 &791441156393500837
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -295,7 +231,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 791441155348231308}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8586216471633907075
 BoxCollider:
@@ -803,11 +739,6 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: f083a09bf8dd7d2c881566a2fea1bdd3, type: 3}
     - target: {fileID: 4731907593457449487, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}
-      propertyPath: m_JumpPower
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4731907593457449487, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
-        type: 3}
       propertyPath: m_RunCycleLegOffset
       value: 0.3
       objectReference: {fileID: 0}
@@ -823,18 +754,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4731907593457449487, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}
-      propertyPath: m_GravityMultiplier
-      value: 4
+      propertyPath: raycastMask.m_Bits
+      value: 7441
       objectReference: {fileID: 0}
     - target: {fileID: 4731907593457449487, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}
       propertyPath: m_GroundCheckDistance
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4731907593457449487, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
-        type: 3}
-      propertyPath: raycastMask.m_Bits
-      value: 7441
       objectReference: {fileID: 0}
     - target: {fileID: 4731907593463789901, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}
@@ -844,27 +770,27 @@ PrefabInstance:
     - target: {fileID: 4731907593463789901, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}
       propertyPath: m_Height
-      value: 2.4739933
+      value: 2.4484558
       objectReference: {fileID: 0}
     - target: {fileID: 4731907593463789901, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}
       propertyPath: m_Center.y
-      value: 1.2076998
+      value: 1.2204685
       objectReference: {fileID: 0}
     - target: {fileID: 4731907593463789901, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}
       propertyPath: m_Radius
-      value: 0.36507893
+      value: 0.40044093
       objectReference: {fileID: 0}
     - target: {fileID: 4731907593463789901, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}
       propertyPath: m_Center.x
-      value: 0.005973816
+      value: -0.003456086
       objectReference: {fileID: 0}
     - target: {fileID: 4731907593463789901, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.043005943
+      value: -0.050078332
       objectReference: {fileID: 0}
     - target: {fileID: 4731907593468380361, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}

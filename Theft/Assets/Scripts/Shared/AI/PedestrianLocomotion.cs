@@ -11,7 +11,7 @@ namespace Game.Shared {
     public class PedestrianLocomotion: MonoBehaviour {
 
         /** Maximum speed of the walking animation */
-        public float maximumWalkSpeed = 3.8f;
+        public float maximumSpeed = 3.8f;
 
         /** Humanoid character animator */
         private Animator animator = null;
@@ -32,7 +32,6 @@ namespace Game.Shared {
 
             agent.updateRotation = true;
             agent.updatePosition = false;
-            NavMesh.avoidancePredictionTime = 5.0f;
         }
 
 
@@ -50,10 +49,9 @@ namespace Game.Shared {
             // Update the speed of the walk animation when time passes
 
             Vector2 target = GetTargetVelocity();
-            float angle = Vector2.SignedAngle(velocity, target);
 
             if (Time.deltaTime > float.Epsilon) {
-                target = Vector2.ClampMagnitude(target, maximumWalkSpeed);
+                target = Vector2.ClampMagnitude(target, maximumSpeed);
                 velocity = Vector2.Lerp(velocity, target, Time.deltaTime);
             }
 
@@ -63,7 +61,7 @@ namespace Game.Shared {
                 agent.nextPosition = transform.position;
             }
 
-            animator.SetBool("Walk", velocity.magnitude > 0.1f);
+            animator.SetBool("Walk", velocity.magnitude > 1.0f);
             animator.SetFloat("VelocityX", velocity.x);
             animator.SetFloat("VelocityY", velocity.y);
         }

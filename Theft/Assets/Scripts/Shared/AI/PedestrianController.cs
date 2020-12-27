@@ -12,6 +12,9 @@ namespace Game.Shared {
     [RequireComponent(typeof(NavMeshAgent))]
     public class PedestrianController : ActorController {
 
+        /** Delegate triggered when the pedestrian is near a zombie */
+        [SerializeField] private OnMonsterTrigger MonsterListener = null;
+
         /** Clip to play when the actor is damaged */
         [SerializeField] private AudioClip damageClip = null;
 
@@ -23,6 +26,9 @@ namespace Game.Shared {
 
         /** Something killed the actor */
         public DieState DieState = new DieState();
+
+        /** Running to a random waypoint */
+        public PanicState PanicState = new PanicState();
 
         /** Navigating from on waypoint to another */
         public PatrolState PatrolState = new PatrolState();
@@ -37,11 +43,9 @@ namespace Game.Shared {
         private void Start() {
             animator = GetComponent<Animator>();
 
-            SetState(IdleState);
-
-            if (patrolOnStart) {
-                StartCoroutine(StartPatroling());
-            }
+            PanicState.safepointReached += OnSafePointReached;
+            MonsterListener.onTriggerEnter += OnMonsterTriggerEnter;
+            SetInitialState();
         }
 
 
@@ -71,6 +75,41 @@ namespace Game.Shared {
             SetState(DieState);
             AudioService.PlayClip(gameObject, damageClip);
             animator.SetTrigger("Die");
+        }
+
+
+        /**
+         * Sets the initial state of the actor.
+         */
+        private void SetInitialState() {
+            SetState(IdleState);
+
+            if (patrolOnStart) {
+                StartCoroutine(StartPatroling());
+            }
+        }
+
+
+        /**
+         * A zombie entered this pedestrian's sight radius.
+         */
+        private void OnMonsterTriggerEnter(Collider collider) {
+            if (isAlive) {
+                animator.SetBool("Run", true);
+                SetState(PanicState);
+            }
+        }
+
+
+        /**
+         * Reset the state when the actor reaches a safe point.
+         */
+        private void OnSafePointReached(Waypoint waypoint) {
+            if (isAlive) {
+                animator.SetBool("Run", false);
+                PatrolState.waypoint = waypoint;
+                SetInitialState();
+            }
         }
     }
 }

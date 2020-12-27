@@ -132,10 +132,10 @@ namespace Game.Shared {
 
 
         /**
-         * Damage the dragons when a shot impacts them.
+         * Damage humanoid actors when a shot impacts them.
          */
         public void OnShotImpact(RaycastHit hit) {
-            if (hit.collider.CompareTag("Monster")) {
+            if (hit.collider.CompareTag("Monster") || hit.collider.CompareTag("Pedestrian")) {
                 Transform transform = hit.collider.transform;
                 ActorController actor = hit.collider.GetComponent<ActorController>();
                 Vector3 damagePoint = transform.InverseTransformPoint(hit.point);
