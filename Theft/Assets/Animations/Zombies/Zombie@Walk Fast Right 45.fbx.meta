@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 29e5787dc211b411e9adb784cb1bc42f
+guid: 6e0ccc6d6c6bb5d29855404887e0d12f
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -39,7 +39,7 @@ ModelImporter:
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 68
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: -45
       level: 0
@@ -196,7 +196,7 @@ ModelImporter:
     - boneName: LeftShoulder
       humanName: LeftShoulder
       limit:
-        min: {x: 0, y: 0, z: -15}
+        min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 40, z: 30}
         value: {x: 0, y: 0, z: 0}
         length: 0
@@ -204,7 +204,7 @@ ModelImporter:
     - boneName: RightShoulder
       humanName: RightShoulder
       limit:
-        min: {x: 0, y: 0, z: -15}
+        min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 40, z: 30}
         value: {x: 0, y: 0, z: 0}
         length: 0
@@ -216,7 +216,7 @@ ModelImporter:
         max: {x: 90, y: 100, z: 100}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: RightArm
       humanName: RightUpperArm
       limit:
@@ -228,7 +228,7 @@ ModelImporter:
     - boneName: LeftForeArm
       humanName: LeftLowerArm
       limit:
-        min: {x: -90, y: 0, z: 0}
+        min: {x: 0, y: 0, z: 0}
         max: {x: 90, y: 0, z: 80}
         value: {x: 0, y: 0, z: 0}
         length: 0
@@ -236,7 +236,7 @@ ModelImporter:
     - boneName: RightForeArm
       humanName: RightLowerArm
       limit:
-        min: {x: -90, y: 0, z: 0}
+        min: {x: 0, y: 0, z: 0}
         max: {x: 90, y: 0, z: 80}
         value: {x: 0, y: 0, z: 0}
         length: 0
@@ -244,19 +244,19 @@ ModelImporter:
     - boneName: LeftHand
       humanName: LeftHand
       limit:
-        min: {x: 0, y: -40, z: -80}
+        min: {x: 0, y: -40, z: -20}
         max: {x: 0, y: 40, z: 80}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: RightHand
       humanName: RightHand
       limit:
-        min: {x: 0, y: -40, z: -80}
+        min: {x: 0, y: -40, z: -20}
         max: {x: 0, y: 40, z: 80}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: LeftToeBase
       humanName: LeftToes
       limit:

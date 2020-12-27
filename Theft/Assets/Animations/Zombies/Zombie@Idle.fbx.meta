@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 9eb11fb8966b9eda59da2b39ecb13f68
+guid: 7aea23c4a381b312db62bd99ce2c57dd
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Idle
+    second: Zombie Idle
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -19,13 +19,7 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'LeftUpLeg'
-      : position error = 23.775835 mm\n\t'LeftLeg' : position error = 64.704277 mm\n\t'LeftFoot'
-      : position error = 50.244606 mm\n\t'LeftToeBase' : position error = 99.070557
-      mm\n\t'RightUpLeg' : position error = 23.242752 mm\n\t'RightLeg' : position
-      error = 64.706657 mm\n\t'RightFoot' : position error = 50.246788 mm\n\t'RightToeBase'
-      : position error = 99.070557 mm\n"
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -41,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Zombie Idle
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 183
+      lastFrame: 120
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -57,7 +51,7 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 0
       keepOriginalPositionXZ: 1
       heightFromFeet: 1
@@ -202,7 +196,7 @@ ModelImporter:
     - boneName: LeftShoulder
       humanName: LeftShoulder
       limit:
-        min: {x: 0, y: 0, z: -15}
+        min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 40, z: 30}
         value: {x: 0, y: 0, z: 0}
         length: 0
@@ -210,7 +204,7 @@ ModelImporter:
     - boneName: RightShoulder
       humanName: RightShoulder
       limit:
-        min: {x: 0, y: 0, z: -15}
+        min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 40, z: 30}
         value: {x: 0, y: 0, z: 0}
         length: 0
@@ -222,7 +216,7 @@ ModelImporter:
         max: {x: 90, y: 100, z: 100}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: RightArm
       humanName: RightUpperArm
       limit:
@@ -234,7 +228,7 @@ ModelImporter:
     - boneName: LeftForeArm
       humanName: LeftLowerArm
       limit:
-        min: {x: -90, y: 0, z: 0}
+        min: {x: 0, y: 0, z: 0}
         max: {x: 90, y: 0, z: 80}
         value: {x: 0, y: 0, z: 0}
         length: 0
@@ -242,7 +236,7 @@ ModelImporter:
     - boneName: RightForeArm
       humanName: RightLowerArm
       limit:
-        min: {x: -90, y: 0, z: 0}
+        min: {x: 0, y: 0, z: 0}
         max: {x: 90, y: 0, z: 80}
         value: {x: 0, y: 0, z: 0}
         length: 0
@@ -250,19 +244,19 @@ ModelImporter:
     - boneName: LeftHand
       humanName: LeftHand
       limit:
-        min: {x: 0, y: -40, z: -80}
+        min: {x: 0, y: -40, z: -20}
         max: {x: 0, y: 40, z: 80}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: RightHand
       humanName: RightHand
       limit:
-        min: {x: 0, y: -40, z: -80}
+        min: {x: 0, y: -40, z: -20}
         max: {x: 0, y: 40, z: 80}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: LeftToeBase
       humanName: LeftToes
       limit:

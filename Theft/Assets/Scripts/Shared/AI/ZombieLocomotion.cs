@@ -19,13 +19,7 @@ namespace Game.Shared {
     public class ZombieLocomotion: MonoBehaviour {
 
         /** Maximum speed of the walking animation */
-        public float maximumWalkSpeed = 0.54f;
-
-        /** Maximum rotation angle while walking */
-        public float turnAngle = 65.0f;
-
-        /** Seconds of the rotation animation */
-        public float turnTime = 3.2f;
+        public float maximumWalkSpeed = 2.49f;
 
         /** Humanoid character animator */
         private Animator animator = null;
@@ -35,9 +29,6 @@ namespace Game.Shared {
 
         /** Velocity at which the agent is moving */
         private Vector3 velocity = Vector3.zero;
-
-        /** Time to wait for the rotation animation to finish */
-        private float restingTime = 0.0f;
 
 
         /**
@@ -49,7 +40,6 @@ namespace Game.Shared {
 
             agent.updateRotation = true;
             agent.updatePosition = false;
-            NavMesh.avoidancePredictionTime = 5.0f;
         }
 
 
@@ -64,18 +54,9 @@ namespace Game.Shared {
                 return;
             }
 
-            // Wait in the spot while a rotation animation is in progress
-
-            if (restingTime > 0) {
-                agent.nextPosition = transform.position;
-                restingTime -= Time.deltaTime;
-                return;
-            }
-
             // Update the speed of the walk animation when time passes
 
             Vector2 target = GetTargetVelocity();
-            float angle = Vector2.SignedAngle(velocity, target);
 
             if (Time.deltaTime > float.Epsilon) {
                 target = Vector2.ClampMagnitude(target, maximumWalkSpeed);
@@ -88,19 +69,9 @@ namespace Game.Shared {
                 agent.nextPosition = transform.position;
             }
 
-            // To prevent foot sliding trigger the turn animation when the
-            // velocity change is too big. Otherwise, update the speed of
-            // the walking animation's blend tree.
-
-            if (Mathf.Abs(angle) >= turnAngle) {
-                animator.SetFloat("TurnAngle", angle);
-                animator.SetTrigger("Turn");
-                restingTime = turnTime;
-            } else {
-                animator.SetBool("Walk", velocity.magnitude > 0.1f);
-                animator.SetFloat("VelocityX", velocity.x);
-                animator.SetFloat("VelocityY", velocity.y);
-            }
+            animator.SetBool("Walk", velocity.magnitude > 1.5f);
+            animator.SetFloat("VelocityX", velocity.x);
+            animator.SetFloat("VelocityY", velocity.y);
         }
 
 
