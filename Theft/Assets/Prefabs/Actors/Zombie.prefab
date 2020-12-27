@@ -743,7 +743,7 @@ MonoBehaviour:
   DieState:
     ragdollDelay: 0.9
   WanderState:
-    radius: 15
+    radius: 30
 --- !u!114 &6001619825618129460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,7 +797,7 @@ NavMeshAgent:
   m_Height: 3.5
   m_BaseOffset: 0.045
   m_WalkableMask: 1
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1
 --- !u!136 &6001619825618129459
 CapsuleCollider:
   m_ObjectHideFlags: 0

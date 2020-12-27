@@ -49,7 +49,7 @@ namespace Game.Shared {
         private void Update() {
             // Stop walking if the agent is not moving
 
-            if (agent.enabled && agent.isStopped) {
+            if (agent.enabled && (agent.isStopped || agent.pathPending)) {
                 animator.SetBool("Walk", false);
                 return;
             }
@@ -69,7 +69,7 @@ namespace Game.Shared {
                 agent.nextPosition = transform.position;
             }
 
-            animator.SetBool("Walk", velocity.magnitude > 1.5f);
+            animator.SetBool("Walk", velocity.magnitude > 1.0f);
             animator.SetFloat("VelocityX", velocity.x);
             animator.SetFloat("VelocityY", velocity.y);
         }

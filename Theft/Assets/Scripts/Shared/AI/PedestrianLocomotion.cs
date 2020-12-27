@@ -41,7 +41,7 @@ namespace Game.Shared {
         private void Update() {
             // Stop walking if the agent is not moving
 
-            if (agent.enabled && agent.isStopped) {
+            if (agent.enabled && (agent.isStopped || agent.pathPending)) {
                 animator.SetBool("Walk", false);
                 return;
             }
