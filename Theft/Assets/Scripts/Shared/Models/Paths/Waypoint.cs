@@ -10,10 +10,6 @@ namespace Game.Shared {
     [ExecuteInEditMode]
     public class Waypoint : MonoBehaviour {
 
-        /** Current instance ID */
-        // [SerializeField, HideInInspector]
-        // private int uiid = 0;
-
         /** Color to draw the gizmos */
         public Color color = Color.green;
 
@@ -31,31 +27,24 @@ namespace Game.Shared {
 
 #if UNITY_EDITOR
 
-
         /**
          * Set the parent when the object is duplicated.
          */
-        private void OnValidate() {
-            // if (Event.current != null) {
-            //     if (Event.current.commandName != "Duplicate") {
-            //         return;
-            //     }
-            //
-            //     if (uiid == GetInstanceID()) {
-            //         return;
-            //     }
-            //
-            //     Waypoint instance = GetWaypointByID(uiid);
-            //     this.children.Clear();
-            //
-            //     if (instance.uiid != 0) {
-            //         if (!instance.children.Contains(this)) {
-            //             instance.children.Add(this);
-            //         }
-            //     }
-            // }
-            //
-            // uiid = GetInstanceID();
+        [MenuItem("GameObject/3D Object/Create Child Waypoint #&d")]
+        public static void DuplicateWaypoint() {
+            GameObject o = Selection.activeTransform.gameObject;
+            Waypoint parent = (o != null) ? o.GetComponent<Waypoint>() : null;
+
+            if (parent is Waypoint) {
+                GameObject prefab = PrefabUtility.GetCorrespondingObjectFromSource(o);
+                GameObject clone = (GameObject) PrefabUtility.InstantiatePrefab(prefab);
+                Waypoint child = clone.GetComponent<Waypoint>();
+
+                parent.children.Add(child);
+                child.color = parent.color;
+                clone.transform.position = o.transform.position;
+                Selection.activeGameObject = clone;
+            }
         }
 
 
@@ -72,7 +61,7 @@ namespace Game.Shared {
          */
         private void OnDrawGizmos() {
             Gizmos.color = color;
-            Gizmos.DrawCube(transform.position, 5f * Vector3.one);
+            Gizmos.DrawCube(transform.position, 2.5f * Vector3.one);
 
             if (children != null) {
                 foreach (Waypoint child in children) {
