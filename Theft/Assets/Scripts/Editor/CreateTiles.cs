@@ -10,7 +10,7 @@ namespace Game.Editor {
      */
     public class CreateTiles : MonoBehaviour {
 
-        [MenuItem("GameObject/3D Object/CreateTiles")]
+        [MenuItem("GameObject/3D Object/Create Sidewalks")]
         public static void Create() {
             GameObject group = new GameObject("Sidewalks");
 
