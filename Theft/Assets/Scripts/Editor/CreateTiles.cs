@@ -42,13 +42,6 @@ namespace Game.Editor {
             }
         }
 
-        private static bool isCenter(Tilemap t, int x, int y) {
-            return (GetTileName(t, x + 1, y) == "Placeholder") &&
-                   (GetTileName(t, x - 1, y) == "Placeholder") &&
-                   (GetTileName(t, x, y + 1) == "Placeholder") &&
-                   (GetTileName(t, x, y - 1) == "Placeholder");
-        }
-
 
         private static string GetTileName(Tilemap t, int x, int y) {
             var a = t.GetTile(new Vector3Int(x, y, 0));

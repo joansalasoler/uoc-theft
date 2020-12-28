@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 761179826527302130}
   - component: {fileID: 8586216471633907075}
   m_Layer: 15
-  m_Name: Car Obstacle
+  m_Name: Traffic Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,7 @@ PrefabInstance:
     - target: {fileID: 4559350383537761388, guid: 2c624400729946990b06f6dc56bbb1fe,
         type: 3}
       propertyPath: m_Name
-      value: Waypoint
+      value: Player Waypoint
       objectReference: {fileID: 0}
     - target: {fileID: 4559350383537761388, guid: 2c624400729946990b06f6dc56bbb1fe,
         type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2834844841147966476}
   - component: {fileID: 3005611870983386426}
   m_Layer: 0
-  m_Name: Car Listener
+  m_Name: Traffic Listener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 3928714169116080873}
+  radius: 3
 --- !u!195 &-9136834776970082337
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -165,7 +166,7 @@ GameObject:
   - component: {fileID: 427275940304852991}
   - component: {fileID: 1026922315060491513}
   m_Layer: 15
-  m_Name: Car Obstacle
+  m_Name: Traffic Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
