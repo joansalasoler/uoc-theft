@@ -35,7 +35,7 @@ namespace Game.Shared {
          * Check if the given collider is the player.
          */
         private bool IsPlayerCollider(Collider collider) {
-            return player.gameObject == collider.gameObject;
+            return collider.gameObject.CompareTag("Player Grab");
         }
 
 

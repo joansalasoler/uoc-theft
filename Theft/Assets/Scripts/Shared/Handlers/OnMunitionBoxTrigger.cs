@@ -12,7 +12,7 @@ namespace Game.Shared {
          * Fill the player's munition reserve if empty.
          */
         private void OnTriggerEnter(Collider collider) {
-            if (collider.gameObject.CompareTag("Player")) {
+            if (collider.gameObject.CompareTag("Player Grab")) {
                 PlayerController player = GetPlayerController(collider);
 
                 if (player.status.RefillMunition()) {
@@ -28,7 +28,7 @@ namespace Game.Shared {
          * Obtain the player's controller from the collider.
          */
         private PlayerController GetPlayerController(Collider collider) {
-            return collider.GetComponent<PlayerController>();
+            return collider.transform.parent.GetComponent<PlayerController>();
         }
     }
 }

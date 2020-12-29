@@ -97,7 +97,7 @@ namespace Game.Shared {
         private IEnumerator Break() {
             float elapsedTime = 0f;
 
-            while (agent.isStopped && elapsedTime < 2f) {
+            while (agent.enabled && agent.isStopped && elapsedTime < 2f) {
                 elapsedTime += Time.deltaTime;
                 agent.velocity = Vector3.Lerp(agent.velocity, Vector3.zero, elapsedTime / 2f);
                 yield return null;

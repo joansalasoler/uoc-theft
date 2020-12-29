@@ -24,7 +24,7 @@ namespace Game.Shared {
          * Play the sound.
          */
         private void OnCollisionEnter(Collision collision) {
-            if (collision.collider.gameObject.CompareTag("Player")) {
+            if (collision.collider.gameObject.CompareTag("Player Grab")) {
                 audioSource.PlayOneShot(audioSource.clip);
             }
         }

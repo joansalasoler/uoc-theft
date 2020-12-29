@@ -4585,7 +4585,6 @@ GameObject:
   - component: {fileID: 9133176856419099836}
   - component: {fileID: 9133176856419099839}
   - component: {fileID: 7103715155217022514}
-  - component: {fileID: 3565079830305371850}
   - component: {fileID: 9133176856419099838}
   - component: {fileID: 8264178986862981233}
   m_Layer: 8
@@ -4635,19 +4634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f385c76cae68f88930966a53492cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3565079830305371850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9133176856419099833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff500eb320347f9199bdbb0962a25b2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: I WOULD RATHER HAVE A HOLY WATER BLASTER
 --- !u!65 &9133176856419099838
 BoxCollider:
   m_ObjectHideFlags: 0

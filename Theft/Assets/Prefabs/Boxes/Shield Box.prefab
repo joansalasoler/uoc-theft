@@ -4585,7 +4585,6 @@ GameObject:
   - component: {fileID: 9133176856419099836}
   - component: {fileID: 9133176856419099839}
   - component: {fileID: 6996882842691584168}
-  - component: {fileID: 6253034788604149715}
   - component: {fileID: 9133176856419099838}
   - component: {fileID: 6855328721390862430}
   m_Layer: 8
@@ -4635,19 +4634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327634d4b15e10bdfb48fcf4eee8451d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6253034788604149715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9133176856419099833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff500eb320347f9199bdbb0962a25b2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: NEVER LEAVE HOME WITHOUT A CROSS THEY SAY
 --- !u!65 &9133176856419099838
 BoxCollider:
   m_ObjectHideFlags: 0

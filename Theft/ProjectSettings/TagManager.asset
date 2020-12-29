@@ -12,6 +12,8 @@ TagManager:
   - FieldOfView
   - Pedestrian
   - Tilemap
+  - Player Grab
+  - Car Body
   layers:
   - Default
   - TransparentFX
@@ -29,7 +31,7 @@ TagManager:
   - Camera
   - Player Listener
   - Car Dome
-  - 
+  - Car Weapon
   - 
   - 
   - 

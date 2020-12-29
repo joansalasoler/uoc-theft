@@ -20,7 +20,7 @@ namespace Game.Shared {
          * Invoke the delegate on entering a player trigger.
          */
         private void OnTriggerEnter(Collider collider) {
-            if (collider.gameObject.CompareTag("Player")) {
+            if (collider.gameObject.CompareTag("Player Grab")) {
                 if (onTriggerEnter != null) {
                     onTriggerEnter.Invoke(collider);
                 }
@@ -32,7 +32,7 @@ namespace Game.Shared {
          * Invoke the delegate on leaving a player trigger.
          */
         private void OnTriggerExit(Collider collider) {
-            if (collider.gameObject.CompareTag("Player")) {
+            if (collider.gameObject.CompareTag("Player Grab")) {
                 if (onTriggerExit != null) {
                     onTriggerExit.Invoke(collider);
                 }

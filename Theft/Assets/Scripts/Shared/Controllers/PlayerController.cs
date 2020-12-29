@@ -22,6 +22,9 @@ namespace Game.Shared {
         /** Player's blood template */
         [SerializeField] private GameObject bloodPrefab = null;
 
+        /** Transform of the player avatar */
+        [SerializeField] private Transform character = null;
+
         /** Animator for the player's character */
         [SerializeField] Animator animator = null;
 
@@ -67,8 +70,8 @@ namespace Game.Shared {
                 return;
             }
 
-            Vector3 origin = transform.position;
-            Vector3 direction = transform.forward;
+            Vector3 origin = character.transform.position;
+            Vector3 direction = character.transform.forward;
 
             weaponController.Shoot(origin, direction);
             status.DecreaseMunition();
@@ -91,7 +94,7 @@ namespace Game.Shared {
             }
 
             AudioService.PlayClip(gameObject, damageClip);
-            Vector3 damagePoint = transform.InverseTransformPoint(point);
+            Vector3 damagePoint = character.transform.InverseTransformPoint(point);
 
             animator.SetFloat("DamageX", damagePoint.x);
             animator.SetFloat("DamageZ", damagePoint.z);
@@ -148,7 +151,7 @@ namespace Game.Shared {
          * Embed an impact decal into a hit position.
          */
         private void EmbedBloodExplosion(Vector3 point) {
-            Instantiate(bloodPrefab, point, transform.rotation);
+            Instantiate(bloodPrefab, point, character.transform.rotation);
         }
     }
 }

@@ -64,6 +64,7 @@ MonoBehaviour:
   dieClip: {fileID: 8300000, guid: f083a09bf8dd7d2c881566a2fea1bdd3, type: 3}
   bloodPrefab: {fileID: 1238670105864838964, guid: aeb39bb49c00cb3f0a77255a8d53e89a,
     type: 3}
+  character: {fileID: 791441155348231308}
   animator: {fileID: 791441155357401678}
   status: {fileID: 11400000, guid: f043eac25894e540aad63d2eb82ac37e, type: 2}
 --- !u!1 &791441156227785918
@@ -841,7 +842,7 @@ PrefabInstance:
     - target: {fileID: 4731907593468670285, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player Grab
       objectReference: {fileID: 0}
     - target: {fileID: 4731907593473946909, guid: 2e480b54ca6b55f0f8b9b8759dfdde42,
         type: 3}

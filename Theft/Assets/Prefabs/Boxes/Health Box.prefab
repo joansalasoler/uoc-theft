@@ -4585,7 +4585,6 @@ GameObject:
   - component: {fileID: 9133176856419099836}
   - component: {fileID: 9133176856419099839}
   - component: {fileID: 6056767616585740156}
-  - component: {fileID: 5313004591411152470}
   - component: {fileID: 9133176856419099838}
   - component: {fileID: 6336316649005468789}
   m_Layer: 8
@@ -4635,19 +4634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ee827288a3b6f54a2f7dd563946bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5313004591411152470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9133176856419099833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff500eb320347f9199bdbb0962a25b2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: A HANDY KIT OF BANDAGES, GARLIC AND SOME PANACEAMOL
 --- !u!65 &9133176856419099838
 BoxCollider:
   m_ObjectHideFlags: 0

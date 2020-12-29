@@ -693,6 +693,7 @@ GameObject:
   - component: {fileID: 6001619825618129459}
   - component: {fileID: 6001619825618129456}
   - component: {fileID: 5129617859672787436}
+  - component: {fileID: 3354111869563394429}
   m_Layer: 12
   m_Name: Zombie
   m_TagString: Monster
@@ -741,7 +742,7 @@ MonoBehaviour:
     waypoint: {fileID: 0}
     followPlayer: 1
   DieState:
-    ragdollDelay: 0.9
+    ragdollDelay: 0
   WanderState:
     radius: 30
 --- !u!114 &6001619825618129460
@@ -808,7 +809,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.6228256
+  m_Radius: 0.7143253
   m_Height: 3.0591726
   m_Direction: 1
   m_Center: {x: -0.0037841797, y: 1.7719045, z: 0.05645752}
@@ -925,6 +926,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3354111869563394429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001619825618129457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850fb037c63b7256ea913bad8618a5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6001619825663957829
 GameObject:
   m_ObjectHideFlags: 0
