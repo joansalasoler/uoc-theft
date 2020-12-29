@@ -23,7 +23,7 @@ namespace Game.Shared {
         [SerializeField] private GameObject bloodPrefab = null;
 
         /** Animator for the player's character */
-        private Animator animator = null;
+        [SerializeField] Animator animator = null;
 
         /** Invoked when the player is damaged */
         public Action<PlayerController> playerDamaged;
@@ -39,7 +39,7 @@ namespace Game.Shared {
          * Initialization.
          */
         private void Start() {
-            animator = GetComponent<Animator>();
+            OnWeaponListener.onShotAction += OnWeaponShot;
             weaponController.onImpact += OnShotImpact;
         }
 
@@ -126,8 +126,8 @@ namespace Game.Shared {
          * Disables the character and user controllers.
          */
         private void DisableCharacter() {
-            GetComponent<ThirdPersonUserControl>().enabled = false;
-            GetComponent<ThirdPersonCharacter>().enabled = false;
+            GetComponentInChildren<ThirdPersonUserControl>().enabled = false;
+            GetComponentInChildren<ThirdPersonCharacter>().enabled = false;
         }
 
 

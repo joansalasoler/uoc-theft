@@ -64,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 7441
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
   m_JumpPower: 12
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_RunCycleLegOffset: 0.3
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.7
+  m_GroundCheckDistance: 1
 --- !u!114 &4731907592977921543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +90,7 @@ MonoBehaviour:
   damageClip: {fileID: 0}
   dieClip: {fileID: 0}
   bloodPrefab: {fileID: 0}
+  animator: {fileID: 0}
   status: {fileID: 11400000, guid: f043eac25894e540aad63d2eb82ac37e, type: 2}
 --- !u!95 &4731907593461305867
 Animator:
@@ -136,10 +137,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1.6
+  m_Radius: 0.40044093
+  m_Height: 2.4484558
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Center: {x: -0.003456086, y: 1.2204685, z: -0.050078332}
 --- !u!82 &4731907592977921542
 AudioSource:
   m_ObjectHideFlags: 0
