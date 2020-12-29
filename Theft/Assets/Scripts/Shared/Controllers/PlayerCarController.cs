@@ -23,7 +23,7 @@ namespace Game.Shared {
         public GameObject carCamera = null;
 
         /** True when the car is active */
-        private bool isActive = false;
+        public bool isActive = false;
 
         /** NavMesh areas were the character can be spawned */
         private int areaMask = NavMesh.AllAreas;

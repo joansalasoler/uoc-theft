@@ -9,8 +9,11 @@ namespace Game.Shared {
     [RequireComponent(typeof(Collider))]
     public class OnMonsterHitTrigger: MonoBehaviour {
 
+        /** Actor's blood template */
+        [SerializeField] private GameObject bloodPrefab = null;
+
         /** Controller for this actor */
-        ActorController actor = null;
+        private ActorController actor = null;
 
 
         /**
@@ -28,6 +31,7 @@ namespace Game.Shared {
             if (collider.gameObject.CompareTag("Car Body")) {
                 if (actor.isAlive) {
                     actor.Kill();
+                    EmbedBloodExplosion(actor.transform.position);
 
                     Vector3 origin = collider.gameObject.transform.position;
                     Vector3 target = actor.transform.position;
@@ -38,6 +42,14 @@ namespace Game.Shared {
                     body.AddForce(700f * direction.normalized);
                 }
             }
+        }
+
+
+        /**
+         * Embed an impact decal into a hit position.
+         */
+        private void EmbedBloodExplosion(Vector3 point) {
+            Instantiate(bloodPrefab, point, actor.transform.rotation);
         }
     }
 }
